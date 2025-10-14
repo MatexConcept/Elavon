@@ -17,3 +17,4 @@ router.post('/settings', saveSettings);
 router.patch('/settings', updateSettings);
 
 export default router;
+
