@@ -15,8 +15,8 @@ export const getSettings = async (req, res) => {
     res.json({
       success: true,
       data: {
-        phone_number: result[0].phone_number,
-        company_name: result[0].company_name
+        account_balance: result[0].account_balance, 
+        profile_name: result[0].profile_name          
       }
     });
   } catch (error) {

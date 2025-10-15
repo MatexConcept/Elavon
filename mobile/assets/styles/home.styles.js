@@ -126,7 +126,7 @@ export const styles = StyleSheet.create({
     fontWeight: "600",
   },
   sectionTitle: {
-    fontSize: 18,
+    fontSize: 25,
     fontWeight: "600",
     color: COLORS.text,
     marginBottom: 15,

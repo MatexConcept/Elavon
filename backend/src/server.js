@@ -7,10 +7,14 @@ import transactionsRoute from "./routes/transactionsRoute.js";
 import elavonRoutes from './routes/elavonRoutes.js';
 import settingsRoutes from './routes/settingsRoutes.js';
 
+import job from "./config/cron.js";
+
 
 dotenv.config()
 
 const app = express();
+
+if(process.env.NODE_ENV === "production") job.start();
 
 // middleware
 app.use(rateLimiter)
@@ -18,6 +22,10 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5001;
 
+
+app.get("/api/health", (req,res) => {
+    res.status(200).json({status:"ok"})
+});
 
 
 app.use("/api/transactions", transactionsRoute);
